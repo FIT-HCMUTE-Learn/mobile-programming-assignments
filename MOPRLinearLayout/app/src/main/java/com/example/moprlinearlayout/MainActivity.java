@@ -1,24 +1,28 @@
 package com.example.moprlinearlayout;
 
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+    private View layoutLeft, layoutRight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        layoutLeft  = findViewById(R.id.layout_left);
+        layoutRight = findViewById(R.id.layout_right);
+
+        findViewById(R.id.btnShowLeft).setOnClickListener(v -> {
+            layoutLeft.setVisibility(View.VISIBLE);
+            layoutRight.setVisibility(View.GONE);
+        });
+
+        findViewById(R.id.btnShowRight).setOnClickListener(v -> {
+            layoutLeft.setVisibility(View.GONE);
+            layoutRight.setVisibility(View.VISIBLE);
         });
     }
 }

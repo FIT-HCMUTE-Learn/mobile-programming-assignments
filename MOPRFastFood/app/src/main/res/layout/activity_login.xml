@@ -1,103 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    android:background="#FFF5F0">
 
-    <!-- Background Image -->
-    <ImageView
-        android:id="@+id/imgBackground"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/top_background1"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <!-- Welcome Text -->
-    <TextView
-        android:id="@+id/tvWelcome"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome Back"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"
-        app:layout_constraintTop_toBottomOf="@id/imgBackground"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!-- Email Input -->
-    <EditText
-        android:id="@+id/edtEmail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:padding="10dp"
-        android:background="@android:drawable/edit_text"
-        app:layout_constraintTop_toBottomOf="@id/tvWelcome"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="20dp"/>
-
-    <!-- Password Input -->
-    <EditText
-        android:id="@+id/edtPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:padding="10dp"
-        android:background="@android:drawable/edit_text"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/edtEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="20dp"/>
-
-    <!-- Login Button -->
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:background="@drawable/btn_arraw1"
-        android:text="→"
-        app:layout_constraintTop_toBottomOf="@id/edtPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"/>
-
-    <!-- Social Login -->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/btnFacebook"
+        <!-- Top background -->
+        <ImageView
+            android:id="@+id/iv_top_bg"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/top_background1" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tv_welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Facebook"/>
+            android:text="Welcome Back"
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="#F57C00"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp" />
 
-        <Button
-            android:id="@+id/btnGoogle"
+        <!-- Email field -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/email"
+                app:tint="#777777" />
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:paddingStart="12dp"
+                android:background="@android:color/transparent"
+                android:inputType="textEmailAddress" />
+        </LinearLayout>
+
+        <!-- Divider underline -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginHorizontal="24dp" />
+
+        <!-- Password field -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/password"
+                app:tint="#777777" />
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:paddingStart="12dp"
+                android:background="@android:color/transparent"
+                android:inputType="textPassword" />
+        </LinearLayout>
+
+        <!-- Divider underline -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#CCCCCC"
+            android:layout_marginHorizontal="24dp" />
+
+        <!-- Arrow button -->
+        <ImageButton
+            android:id="@+id/btn_login"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_gravity="end"
+            android:background="@null"
+            android:src="@drawable/btn_arraw1"
+            android:padding="12dp"
+            android:contentDescription="Login"
+            app:tint="#FFFFFF" />
+
+        <!-- Social login -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Google"/>
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="48dp">
+
+            <Button
+                android:id="@+id/btn_facebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/facebook"
+                android:padding="8dp"
+                android:drawablePadding="8dp"
+                android:text="Facebook"
+                android:background="@android:drawable/btn_default_small" />
+
+            <View android:layout_width="16dp" android:layout_height="0dp"/>
+
+            <Button
+                android:id="@+id/btn_google"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/google"
+                android:padding="8dp"
+                android:drawablePadding="8dp"
+                android:text="Google"
+                android:background="@android:drawable/btn_default_small" />
+        </LinearLayout>
+
+        <!-- Link to signup -->
+        <TextView
+            android:id="@+id/tv_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Are you new user? Register"
+            android:textSize="14sp"
+            android:textColor="#555555"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <View android:layout_height="32dp" android:layout_width="0dp"/>
     </LinearLayout>
-
-    <!-- Register Text -->
-    <TextView
-        android:id="@+id/tvRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Are you a new user? Register"
-        android:textSize="14sp"
-        android:textColor="@android:color/holo_blue_dark"
-        app:layout_constraintTop_toBottomOf="@drawable/facebook"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

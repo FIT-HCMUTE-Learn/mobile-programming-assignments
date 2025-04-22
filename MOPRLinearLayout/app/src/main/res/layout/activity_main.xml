@@ -1,23 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="@android:color/darker_gray"
-    android:id="@+id/main">
+    android:padding="16dp">
 
-    <!-- Left Layout -->
-    <include
-        layout="@layout/layout_left"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
+    <!-- Buttons để chuyển layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="8dp">
 
-    <!-- Right Layout -->
-    <include
-        layout="@layout/layout_right"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
+        <Button
+            android:id="@+id/btnShowLeft"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Layout Left"/>
 
+        <Button
+            android:id="@+id/btnShowRight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Layout Right"/>
+    </LinearLayout>
+
+    <!-- Container -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <include
+            android:id="@+id/layout_left"
+            layout="@layout/layout_left"/>
+
+        <include
+            android:id="@+id/layout_right"
+            layout="@layout/layout_right"
+            android:visibility="gone"/>
+    </FrameLayout>
 </LinearLayout>

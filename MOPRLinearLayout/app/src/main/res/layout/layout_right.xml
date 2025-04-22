@@ -1,75 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@android:color/white">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <!-- Row 1 -->
-    <TextView
+    <!-- Block 1: đỏ -->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#E60000"
-        android:text="1"
-        android:textSize="24sp"
-        android:textColor="@android:color/white"
-        android:gravity="center" />
+        android:background="#F44336">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:layout_gravity="center"/>
+    </FrameLayout>
 
-    <!-- Row 2 (Split into Two Columns) -->
+    <!-- Phần dưới -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
         android:orientation="horizontal">
 
-        <TextView
+        <!-- Block 2: vàng -->
+        <FrameLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#FFCC00"
-            android:text="2"
-            android:textSize="24sp"
-            android:textColor="@android:color/white"
-            android:gravity="center" />
+            android:background="#FFEB3B">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:layout_gravity="center"/>
+        </FrameLayout>
 
-        <TextView
+        <!-- Area phải: Block 3 trên, Blocks 4 & 5 dưới -->
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:background="#008DFF"
-            android:text="3"
-            android:textSize="24sp"
-            android:textColor="@android:color/white"
-            android:gravity="center" />
+            android:layout_weight="2">
+
+            <!-- Block 3: xanh dương -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="#03A9F4">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"/>
+            </FrameLayout>
+
+            <!-- Blocks 4 & 5: ngang -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <!-- Block 4: hồng -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#E1BEE7">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:layout_gravity="center"/>
+                </FrameLayout>
+
+                <!-- Block 5: tím -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#9C27B0">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp"
+                        android:layout_gravity="center"/>
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
-
-    <!-- Row 3 (Split into Three Columns) -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFB3C1"
-            android:text="4"
-            android:textSize="24sp"
-            android:textColor="@android:color/white"
-            android:gravity="center" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#800080"
-            android:text="5"
-            android:textSize="24sp"
-            android:textColor="@android:color/white"
-            android:gravity="center" />
-    </LinearLayout>
-
 </LinearLayout>
